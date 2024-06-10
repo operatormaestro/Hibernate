@@ -1,0 +1,1 @@
+insert into netology.persons values ('Виктор', 'Чугунов', 34, '+7(999)-999-99-01','TVER');

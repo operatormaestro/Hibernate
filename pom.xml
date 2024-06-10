@@ -65,6 +65,17 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>3.3.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>10.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-database-postgresql</artifactId>
+            <version>10.14.0</version>
+            <scope>runtime</scope>
+        </dependency>
 
     </dependencies>
 
@@ -74,6 +85,19 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>10.14.0</version>
+                <configuration>
+                    <url>jdbc:postgresql://localhost:5432/postgres</url>
+                    <user>master</user>
+                    <password>CXT67kpt123</password>
+                    <schemas>
+                        <schema>netology</schema>
+                    </schemas>
+                </configuration>
             </plugin>
         </plugins>
     </build>

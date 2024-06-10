@@ -1,0 +1,1 @@
+insert into netology.persons values ('Joseph', 'Biden', 100, '+1(001)-000-00-01','WASHINGTON');

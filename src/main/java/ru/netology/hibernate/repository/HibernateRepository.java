@@ -16,6 +16,6 @@ public class HibernateRepository {
 
     @SuppressWarnings("unchecked")
     public List<Person> getPersonsByCity(String city) {
-        return entityManager.createNativeQuery("select * from netology.persons where city_of_living = :city", Person.class).setParameter("city", city).getResultList();
+        return entityManager.createNativeQuery("select * from netology.persons where lower(city_of_living) = :city", Person.class).setParameter("city", city.toLowerCase()).getResultList();
     }
 }
