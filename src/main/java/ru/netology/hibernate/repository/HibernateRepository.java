@@ -1,21 +1,19 @@
 package ru.netology.hibernate.repository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import lombok.AllArgsConstructor;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.netology.hibernate.model.Person;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
-@AllArgsConstructor
-public class HibernateRepository {
-    @PersistenceContext
-    private EntityManager entityManager;
+public interface HibernateRepository extends JpaRepository<Person, Integer> {
+    List<Person> findByCityOfLivingIgnoreCase(String city);
 
-    @SuppressWarnings("unchecked")
-    public List<Person> getPersonsByCity(String city) {
-        return entityManager.createNativeQuery("select * from netology.persons where lower(city_of_living) = :city", Person.class).setParameter("city", city.toLowerCase()).getResultList();
-    }
+    List<Person> findByAgeLessThanOrderByAge(int age);
+
+    Optional<Person> findByNameAndSurname (String name, String surname);
+
+
 }

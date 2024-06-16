@@ -1,4 +1,4 @@
-create table netology.PERSONS
+create table netology.persons
 (
     name           varchar not null,
     surname        varchar not null,

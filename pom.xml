@@ -91,6 +91,7 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>10.14.0</version>
                 <configuration>
+                    <skipExecutingMigrations>true</skipExecutingMigrations>
                     <url>jdbc:postgresql://localhost:5432/postgres</url>
                     <user>master</user>
                     <password>CXT67kpt123</password>
