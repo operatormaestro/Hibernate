@@ -18,7 +18,7 @@ public class HibernateController {
     private HibernateRepository hibernateRepository;
 
     @GetMapping("/by-city")
-    public List<Person> getPersonsByCity(@RequestParam String city) {
+    public List<Person> findByCityOfLivingIgnoreCase(@RequestParam String city) {
         return hibernateRepository.findByCityOfLivingIgnoreCase(city);
     }
 
